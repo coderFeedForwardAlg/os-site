@@ -1,7 +1,8 @@
 {
-  "homepage" : "https://coderFeedForwardAlg.github.io/os-site",
+  
   "name": "os-site",
   "version": "0.1.0",
+  "homepage" : "https://coderFeedForwardAlg.github.io/os-site",
   "private": true,
   "dependencies": {
     "@emotion/css": "^11.10.6",
