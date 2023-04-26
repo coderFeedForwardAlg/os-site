@@ -52,10 +52,27 @@ const Landing = () => {
       color: #000;
       background: rgb(255, 218, 87);
   }
+  `;
+
+  const BigCard = styled.div`
+    width: 30vmin;
+    aspect-ratio: 5/7;
+    background-color: rgba(0,0,0,0.3);
+    border-radius: 1vmin;
+    position: absolute;
+    translate(-50%);
+  `;
+  const LittleCard = styled.div`
+    width: 12vmin;
+    aspect-ratio: 5/7;
+    background-color: rgba(0,0,0,0.3);
+    border-radius: 2vmin;
+    position: absolute;
+  `;
+
+  const cardContain = styled.div`
   
-  
-  
-  `
+  `;
 
   const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const words = "CLOUD OPERATING SYSTEMS";
@@ -139,6 +156,13 @@ const words = "CLOUD OPERATING SYSTEMS";
                 Virtual networks provide networking services for the cloud infrastructure and enables connectivity outside the cloud. A virtual network may also include a bandwidth allocation process that includes priority and quality of service features, load balancing, and firewalls. 
 
                 </p>
+
+                <h3>Data Structure Management </h3>
+                <p>
+                Cloud operating systems provide services for accessing data in a structured fashion. The three main structures to support this are block, file, and object structures. Block storage stores data in fixed-sized blocks. Each block is a contiguous sequence of bytes.  File-based storage systems consist of a storage array, a controller and operating system, and one to several networked-storage protocols. 
+                Object storage uses a flat address space. Each object consists of a container that stores both the data and metadata describing the data such as file size. Each object has a unique object ID that lets it be addressed directly. In an object storage system data is accessed using hypertext transfer protocol or HTTP with a web browser or API.
+
+                </p>
   </div>
 
   const [text, setText] = useState(cloud); 
@@ -202,8 +226,16 @@ const words = "CLOUD OPERATING SYSTEMS";
                 </div>
                 
                 {/* cards  */}
-
-                
+                {/* <cardContain>
+                    <LittleCard></LittleCard>
+                    <BigCard></BigCard>
+                    <LittleCard></LittleCard>
+                    <BigCard></BigCard>
+                    <LittleCard></LittleCard>
+                    <BigCard></BigCard>
+                    <LittleCard></LittleCard>
+                    <BigCard></BigCard>
+                </cardContain> */}
 
                 
             </Section>
