@@ -17,15 +17,21 @@ const Landing = () => {
     position: relitive;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    // align-items: center;
     min-height: 50px;
     padding: 100px 20vw;
   `;
   
   const Title = styled.h1`
+  text-align: left;
   font-size: 40px;
   font-family: 'Space Mono', monospace;
+  padding:0;
 
+  `;
+
+  const A = styled.a`
+    color: white;
   `;
 
   // help form https://copy-paste-css.com
@@ -74,95 +80,111 @@ const Landing = () => {
   
   `;
 
-  const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-const words = "CLOUD OPERATING SYSTEMS";
-  const hoverEffect = (e) =>{
+const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+
+  let [nameText, setNameText] = useState("I'M MAX SCOTT");
+  
+  const hoverEffectName = (e) =>{
+    const OGname = "I'M MAX SCOTT";
+    
     let iters = 0;
     const inteval = setInterval(
         () =>{
-            e.target.innerText = e.target.innerText.split("").map( (letter, index) => {
+          setNameText(nameText.split("").map( (letter, index) => {
 
                 if(index < iters){
-                    return words[index];
+                    return OGname[index];
                 }
                 return letters[Math.floor(Math.random() * 26)] 
                 
-            }).join("");
-            if(iters >= 23){
+            }).join("")) ;
+            if(iters >= 100){
                 clearInterval(inteval);
             }
-            iters += 1 / 2; 
+            iters += 1 /4; 
         }, 30
     )
-
-    
   }
 
+  useEffect( ()=>{
+    hoverEffectName();
+  }, []);
+
+  let [softwareText, setSoftwareText] = useState("A SFTWARE ENGINEAR");
+  const hoverEffectSoftware = () =>{
+    const OGsoftware = "A SFTWARE ENGINEAR";
+    
+    let iters = 0;
+    const inteval = setInterval(
+        () =>{
+          setSoftwareText(softwareText.split("").map( (letter, index) => {
+
+                if(index < iters){
+                    return OGsoftware[index];
+                }
+                return letters[Math.floor(Math.random() * 26)] 
+                
+            }).join("") );
+            if(iters >= 100){
+                clearInterval(inteval);
+            }
+            iters += 1 / 4; 
+        }, 30
+    )
+  }
+
+  useEffect( ()=>{
+    hoverEffectSoftware();
+  }, []);
+
+  let [dataText, setDataText] = useState("AND DATA SCIANTIST");
+  const hoverEffectData = () =>{
+    const OGsoftware = "AND DATA SCIANTIST";
+    
+    let iters = 0;
+    const inteval = setInterval(
+        () =>{
+          setDataText(dataText.split("").map( (letter, index) => {
+
+                if(index < iters){
+                    return OGsoftware[index];
+                }
+                return letters[Math.floor(Math.random() * 26)] 
+                
+            }).join("") );
+            if(iters >= 100){
+                clearInterval(inteval);
+            }
+            iters += 1 / 4; 
+        }, 30
+    )
+  }
+
+  useEffect( ()=>{
+    hoverEffectData();
+  }, []);
+
+
   const cloud  = <div> 
-
-<h1>Cloud Computing</h1>
-                <h3>Essential Characteristics</h3>
-                <p>
-                The essential characteristics of Cloud Operating Systems are broad network access, rapid elasticity, measured service, on-demand self-service, and resource pooling.
-                <br/>
-                <br/>
-                Broad network access means that users of cloud operating systems can access the cloud resources from their own devices such as laptops. 
-                <br/>
-                <br/>
-                Rapid elasticity means the ability to scale quickly. Cloud computing lets you scale up or down the resources that you are using. If a business knows its web application gets lots of traffic around holidays but not as much traffic at other times of the year, it may want to consider deploying its web app in the cloud so that it can scale up and down to match the fluctuations in traffic.
-                <br/>
-                <br/>
-                Cloud computing provides Measured service. This means that cloud systems automatically control and optimize resource use by metering capabilities such as storage, processing, bandwidth, or active user accounts. This provides transparency for the provider and consumer of the cloud service. 
-
-                On-demand self-service means that a user of cloud computing can provision computing capabilities such as server time as they need automatically. Because the service is on-demand, resources are not permanent parts of a business's IT infrastructure which can save costs. 
-                <br/>
-                <br/>
-                Resource pooling simply means that providers of cloud services have many resources that they pool together to serve multiple consumers or users of the cloud resources. Different physical and virtual resources are dynamically assigned and reassigned according to consumer demand.
-                </p>
-                <h3>Service Models</h3>
-                <p>
-                There are three main service models that cloud computing provides.  Software as a service or SaaS, platform as a service or PaaS, and infrastructure as a service or IaaS. 
-                <br/>
-                <br/>
-                    SaaS provides services to customers in the form of application software that runs on the cloud. The software is often accessed through a web browser. This removes the need for software installation, maintenance, upgrades, and patches. Examples of SaaS products are Gmail and Microsoft 365. 
-                <br/>
-                <br/>
-                    PaaS provides customers with a platform on which their software can run. In this model, the customer must create or obtain the software but the cloud provider will take care of running and scaling it. Often an organization using a PaaS will be able to run their software while only paying for the computing resources they need for as long as they need.
-                <br/>
-                <br/>
-                    IaaS is like a PaaS that lets customers have more control. Customers do not control the resources of the underlying cloud infrastructure but do control operating systems, and deployed applications, and have limited control over networking components. 
-
-                </p>
+<h2> My GitHub</h2>
+    <p>
+      
+    My GitHub: <A href='https://github.com/coderFeedForwardAlg'>https://github.com/coderFeedForwardAlg</A> <br/>
+    
+    
+    </p>
   </div>
 
   const OS = <div>
 
-<h1>Cloud Operating Systems</h1>
+<h2>My Most Resent Projects</h2>
                 <p>
-                Cloud operating systems are distributed operating systems that are designed to run in the cloud service provider's data centers. They are used to manage high-performance servers, networks, and storage resources and provide those services to users. Cloud operating systems manage the provision of services to users and may provide some tools to the users but it is mostly hidden from the cloud service user. 
+                Productivity Pangolin: <A href='https://productivitypangolin.com'>https://productivitypangolin.com/</A>
 
                 </p>
 
-                <h3>Virtualization </h3>
-                <p>
-                Virtual machine technology lets cloud providers divide their large resources into many virtual machines that can be given to cloud users. Users can request more or less virtual machines much easier than they could buy and configure physical machines themselves.
-                </p>
-                <h3>Virtual storage</h3>
-                <p>
-                The virtual storage of a cloud operating system provides data storage for the cloud infrastructure. It stores cloud management information such as virtual machines and virtual network definitions. It also provides space for applications running in the cloud environment and provides storage-related mechanisms such as workload migration, automated backups, and integrated version control.
-                </p>
-                <h3>Virtual Networks</h3>
-                <p>
-                Virtual networks provide networking services for the cloud infrastructure and enables connectivity outside the cloud. A virtual network may also include a bandwidth allocation process that includes priority and quality of service features, load balancing, and firewalls. 
-
-                </p>
-
-                <h3>Data Structure Management </h3>
-                <p>
-                Cloud operating systems provide services for accessing data in a structured fashion. The three main structures to support this are block, file, and object structures. Block storage stores data in fixed-sized blocks. Each block is a contiguous sequence of bytes.  File-based storage systems consist of a storage array, a controller and operating system, and one to several networked-storage protocols. 
-                Object storage uses a flat address space. Each object consists of a container that stores both the data and metadata describing the data such as file size. Each object has a unique object ID that lets it be addressed directly. In an object storage system data is accessed using hypertext transfer protocol or HTTP with a web browser or API.
-
-                </p>
+                
   </div>
 
   const [text, setText] = useState(cloud); 
@@ -178,6 +200,7 @@ const words = "CLOUD OPERATING SYSTEMS";
         <div className = {css`
         font-family: 'Bruno Ace SC', cursive;
         margin: 0;
+
         color: white;
         background: black;
         
@@ -188,10 +211,12 @@ const words = "CLOUD OPERATING SYSTEMS";
            
            <Section1 className={css`
             background: red;
-            max-hight: 400px;
+            // max-hight: 40px;
            `}>
-                <Title onLoad={hoverEffect} onMouseOver={hoverEffect} >CLOUD OPERATING SYSTEMS</Title>
-                <h5> scroll down to learn more abour cloud operating systems </h5>
+                <Title onLoad={hoverEffectName} onMouseOver={hoverEffectName}>{nameText}</Title>
+                <Title onLoad={hoverEffectSoftware} onMouseOver={hoverEffectSoftware}>{softwareText}</Title>
+                <Title onLoad={hoverEffectSoftware} onMouseOver={hoverEffectData}>{dataText}</Title>
+                <h5> scroll down to learn more about my work</h5>
 
                 
             </Section1>
@@ -220,8 +245,8 @@ const words = "CLOUD OPERATING SYSTEMS";
                     display: flex; 
                     align-items: stretch;
                 '>
-                <Button onClick={showOS}>learn about cloud operating systems</Button>
-                <Button onClick={showCloud}>learn about cloud computing </Button>
+                <Button onClick={showOS}>Most Resent Projects</Button>
+                <Button onClick={showCloud}>My GitHub </Button>
 
                 </div>
                 
@@ -264,10 +289,7 @@ const words = "CLOUD OPERATING SYSTEMS";
                     </svg>
                 </div>
 
-                <h1>citations</h1>
-                <h5>Operating Systems Internals and Design Principles by William Stallings.</h5>
-                <h5> Site created by Max Scott.</h5>
-
+              
 
             </Section>
             
